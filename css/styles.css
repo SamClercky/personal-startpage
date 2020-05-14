@@ -1,0 +1,204 @@
+:root {
+    --bg-color: #212121;
+    --fg-color: #ffffff;
+    --font-color: white;
+
+    --vrije-tijd: #4dd0e1;
+    --prog: #ff8a65;
+    --sociaal: #fff176;
+
+    --default-spacing: 10px;
+    --border-radius: 10px;
+}
+
+html {
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Hack Nerd Font";
+    color: var(--fg-color);
+    text-align: center;
+    display: flex;
+}
+
+body {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+}
+
+time {
+    display: block;
+    width: 100%;
+}
+
+time#datum {
+    font-stretch: expanded;
+}
+time#timer {
+    font-size: 3.5rem;
+    color: var(--vrije-tijd);
+}
+
+h1, h3 {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+h3 {
+    display: block;
+    border-bottom: solid var(--fg-color) 0.3rem;
+    margin-top: 0px;
+    padding-bottom: 0.75em;
+}
+
+form {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    margin: var(--default-spacing);
+    margin-top: calc(3rem);
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+form > * {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    border-radius: 0px;
+    border: none;
+    color: var(--fg-color);
+}
+
+form > select { /* TODO */
+    display: none;
+}
+
+form > input {
+    padding: 1rem;
+    background-color: var(--bg-color);
+    filter: brightness(85%);
+    flex: 9;
+    color: var(--prog);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+form > input:focus {
+    border: var(--vrije-tijd) solid 1px;
+}
+
+form > button {
+    background-color: var(--sociaal);
+    color: var(--bg-color);
+    padding: 1rem;
+    flex: 1;
+}
+
+#links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+
+#links > section {
+    background-color: var(--bg-color);
+    filter: brightness(85%);
+    padding: 1rem;
+    border-radius: 1rem;
+    flex-grow: 1;
+    margin: 10px;
+}
+
+.socialemedia > h3, .socialemedia a:hover {
+    color: var(--vrije-tijd);
+}
+.programmeren > h3, .programmeren a:hover {
+    color: var(--prog);
+}
+.school > h3, .school a:hover {
+    color: var(--sociaal);
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+li {
+    padding: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--fg-color);
+    transition: color 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+a > i {
+    margin-right: 1ex;
+}
+
+/* Wave animation */
+.wave-container {
+    position: absolute;
+    z-index: -999;
+    bottom: 0px;
+    width: 100%;
+    height: 100px;
+}
+
+.wave-container .wave {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100px;
+    background-image: url("../img/wave.svg");
+    background-size:990px 100px;
+    background-repeat: repeat-x;
+    filter: grayscale(100%)
+}
+
+.wave-container .wave.wave1{
+	animation: wave-animation 30s linear infinite;
+	opacity:1;
+	animation-delay:0s;
+    bottom: 0;
+}
+.wave-container .wave.wave2{
+	animation: wave-animation 15s linear infinite reverse;
+	opacity:0.5;
+	animation-delay:-5s;
+	bottom: 10px;
+}
+.wave-container .wave.wave3{
+	animation: wave-animation 30s linear infinite;
+	opacity:0.2;
+	animation-delay:-2s;
+	bottom: 15px;
+	
+}
+.wave-container .wave.wave4{
+	animation: wave-animation 5s linear infinite reverse;
+	opacity:0.7;
+	animation-delay:-5s;
+	bottom: 20px;
+}
+
+@keyframes wave-animation {
+    from {
+        background-position-x: 0px;
+    }
+    to {
+        background-position-x: 999px;
+    }
+}
