@@ -101,6 +101,9 @@ function manageSearch() {
 }
 
 function init() {
+    // init SW
+    registerWorker();
+
     // manage timer
     manageTime();
 
@@ -119,6 +122,19 @@ function init() {
     }
 
     manageSearch();
+}
+
+function registerWorker() {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', async function() {
+          try {
+              const registraation = await navigator.serviceWorker.register("../sw.js");
+              console.log("ServiceWorker registration succesful with scope: ", registraation.scope);
+          } catch (err) {
+              console.log("ServiceWorker registration failed: ", err);
+          }
+        });
+      }
 }
 
 init();
