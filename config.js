@@ -18,8 +18,8 @@ const sections = {
 };
 
 const searchEngines = {
-    "Google": "https://www.google.be/#q={}",
     "DuckDuckGo": "https://duckduckgo.com/?q={}",
+    "Google": "https://www.google.be/search?q={}",
     "Arch Wiki": "https://wiki.archlinux.org/index.php?search={}",
     "MDN": "https://developer.mozilla.org/nl/search?q={}",
     "Caniuse": "https://caniuse.com/#search={}",
