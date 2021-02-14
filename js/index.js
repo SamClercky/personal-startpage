@@ -48,7 +48,7 @@ function formatDate(date) {
     const day = weekdays[date.getDay()];
     const numberOfDay = date.getDate();
     const month = months[date.getMonth()];
-    const year = date.getYear();
+    const year = date.getYear() + 1900;
 
     return `${day}, ${numberOfDay} ${month} ${year}`;
 }
