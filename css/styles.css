@@ -34,6 +34,7 @@ body {
     justify-content: center;
     align-items: center;
     background: var(--bg-color);
+    height: fit-content;
 }
 
 time {
